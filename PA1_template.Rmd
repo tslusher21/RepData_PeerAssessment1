@@ -42,7 +42,7 @@ dev.off()
 
 ```
 
-![plot of dailysteps](dailysteps.png)
+![plot of dailysteps](figure/dailysteps.png)
 
 2. Calculate and report the **mean** and **median** total number of steps taken per day
 
@@ -70,7 +70,7 @@ dev.off()
 
 ```
 
-![plot of mean_interv_steps](mean_interv_steps.png)
+![plot of mean_interv_steps](figure/mean_interv_steps.png)
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -126,7 +126,7 @@ dev.off()
 
 ```
 
-![plot of dailyStepsImputed](dailystepsImputed.png)
+![plot of dailyStepsImputed](figure/dailystepsImputed.png)
 
 ```{r}
 
@@ -164,4 +164,4 @@ dev.off()
 
 ```
 
-![plot of mean_interv_wd_steps](mean_interv_wd_steps.png)
+![plot of mean_interv_wd_steps](figure/mean_interv_wd_steps.png)
