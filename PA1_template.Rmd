@@ -36,7 +36,7 @@ names(dailySteps) <- c("date","steps")
 
 #plot and save the histogram of steps per day
 #breaks are in blocks of 2000 steps
-png("dailysteps.png")
+png("figure/dailysteps.png")
 hist(dailySteps$steps,main="Steps per Day",xlab="Steps",breaks=8,col="lightblue")
 dev.off()
 
@@ -64,7 +64,7 @@ The *median* number of steps per day is **10395**
 mean_interv_steps <- aggregate(data$steps,by=list(data$interval),FUN=mean,na.rm=TRUE)
 names(mean_interv_steps) <- c("interval","meanSteps")
 
-png("mean_interv_steps.png")
+png("figure/mean_interv_steps.png")
 plot(mean_interv_steps$interval,mean_interv_steps$meanSteps,type="l",main="Mean Steps Taken per 5-minute Interval",xlab="Interval",ylab="Mean Steps Taken")
 dev.off()
 
@@ -120,7 +120,7 @@ names(dailyStepsImputed) <- c("date","steps")
 
 #plot and save the histogram of steps per day
 #breaks are in blocks of 2000 steps
-png("dailystepsImputed.png")
+png("figure/dailystepsImputed.png")
 hist(dailyStepsImputed$steps,main="Steps per Day",xlab="Steps",breaks=8,col="lightblue")
 dev.off()
 
@@ -158,7 +158,7 @@ mean_interv_wd_steps <- aggregate(dataImputed$steps,by=list(dataImputed$interval
 names(mean_interv_wd_steps) <- c("interval","weekday","meanSteps")
 
 library(lattice)
-png("mean_interv_wd_steps.png")
+png("figure/mean_interv_wd_steps.png")
 xyplot(meanSteps~interval | weekday, data = mean_interv_wd_steps, type = 'l', xlab = 'Interval', ylab = 'Number of steps', layout = c(1,2))
 dev.off()
 

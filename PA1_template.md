@@ -1,9 +1,4 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
+# Reproducible Research: Peer Assessment 1
 
 
 ## Loading and preprocessing the data
@@ -34,17 +29,17 @@ names(dailySteps) <- c("date","steps")
 
 #plot and save the histogram of steps per day
 #breaks are in blocks of 2000 steps
-png("dailysteps.png")
+png("figure/dailysteps.png")
 hist(dailySteps$steps,main="Steps per Day",xlab="Steps",breaks=8,col="lightblue")
 dev.off()
 ```
 
 ```
-## RStudioGD 
-##         2
+## png 
+##   2
 ```
 
-![plot of dailysteps](dailysteps.png)
+![plot of dailysteps](figure/dailysteps.png)
 
 2. Calculate and report the **mean** and **median** total number of steps taken per day
 
@@ -65,17 +60,17 @@ The *median* number of steps per day is **10395**
 mean_interv_steps <- aggregate(data$steps,by=list(data$interval),FUN=mean,na.rm=TRUE)
 names(mean_interv_steps) <- c("interval","meanSteps")
 
-png("mean_interv_steps.png")
+png("figure/mean_interv_steps.png")
 plot(mean_interv_steps$interval,mean_interv_steps$meanSteps,type="l",main="Mean Steps Taken per 5-minute Interval",xlab="Interval",ylab="Mean Steps Taken")
 dev.off()
 ```
 
 ```
-## RStudioGD 
-##         2
+## png 
+##   2
 ```
 
-![plot of mean_interv_steps](mean_interv_steps.png)
+![plot of mean_interv_steps](figure/mean_interv_steps.png)
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -122,17 +117,17 @@ names(dailyStepsImputed) <- c("date","steps")
 
 #plot and save the histogram of steps per day
 #breaks are in blocks of 2000 steps
-png("dailystepsImputed.png")
+png("figure/dailystepsImputed.png")
 hist(dailyStepsImputed$steps,main="Steps per Day",xlab="Steps",breaks=8,col="lightblue")
 dev.off()
 ```
 
 ```
-## RStudioGD 
-##         2
+## png 
+##   2
 ```
 
-![plot of dailyStepsImputed](dailystepsImputed.png)
+![plot of dailyStepsImputed](figure/dailystepsImputed.png)
 
 
 ```r
@@ -162,14 +157,14 @@ mean_interv_wd_steps <- aggregate(dataImputed$steps,by=list(dataImputed$interval
 names(mean_interv_wd_steps) <- c("interval","weekday","meanSteps")
 
 library(lattice)
-png("mean_interv_wd_steps.png")
+png("figure/mean_interv_wd_steps.png")
 xyplot(meanSteps~interval | weekday, data = mean_interv_wd_steps, type = 'l', xlab = 'Interval', ylab = 'Number of steps', layout = c(1,2))
 dev.off()
 ```
 
 ```
-## RStudioGD 
-##         2
+## png 
+##   2
 ```
 
-![plot of mean_interv_wd_steps](mean_interv_wd_steps.png)
+![plot of mean_interv_wd_steps](figure/mean_interv_wd_steps.png)
